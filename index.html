@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="thiết kế website, bán source code, share source code, Lương Minh Triệu Vĩ, lập trình web" />
+  <meta name="author" content="Lương Minh Triệu Vĩ" />
+  <title>Nguyễn Lâm Gia Bảo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@600;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <div class="avatar-frame">
+      <img src="assets/avatar.jpg" alt="Ảnh đại diện của Gia Bảo" class="avatar" />
+      <img src="assets/frame.png" alt="Khung viền ảnh đại diện" class="avatar-border" />
+    </div>
+    
+    <div class="name">
+      Nguyễn Lâm Gia Bảo
+      <img src="./assets/verified.png" alt="Huy hiệu xác minh" class="verified-badge" />
+    </div>
+
+    <div class="info">
+      Composer<br>
+      Desiner<br>
+      Cần source code? Inbox Zalo mình<br>
+      <button class="button" onclick="location.href='https://zalo.me/0926884557'">
+        <i>Zalo: 0926884557</i>
+      </button>
+    </div>
+
+    <div class="button-container">
+      <button class="button" onclick="location.href='https://t.me/giabao'">
+        <i class="fab fa-telegram"></i> Telegram
+      </button>
+      <button class="button" onclick="location.href='https://www.facebook.com/share/1Ejysbhqoz/'">
+        <i class="fab fa-facebook"></i> Facebook
+      </button>
+      <button class="button" onclick="location.href='https://www.tiktok.com/@nguyenbaobecker'">
+        <i class="fab fa-tiktok"></i> TikTok
+      </button>
+      <button class="button" onclick="location.href='https://www.instagram.com/nguyenbao14011006?igsh=OHJvaXY4M3Ywd2Nm'">
+        <i class="fab fa-instagram"></i> Instagram
+      </button>
+      <button class="button" onclick="location.href='https://qrcode-nl6s.onrender.com/'">
+        <i class="fa fa-qrcode"></i> Web Tạo Mã QR
+      </button>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="donate-section">
+      <h3>Quét Qr Để Add FB</h3>
+      <img src="assets/becker.png" alt="QR Code Donate" class="qr-code" />
+      <p class="bank-info">
+        NGÂN HÀNG: VC Bank<br>
+        STK: 9984771687<br>
+        TÊN: LUONG MINH TRIEU VI
+      </p>
+      <button class="button" id="download-qr-btn">
+        <i class="fas fa-download"></i> Tải xuống QR
+      </button>
+    </div>
+  </div>
+
+  <button class="music-btn" id="music-btn">
+    <i class="fas fa-play"></i>
+  </button>
+
+  <audio id="background-music" loop>
+    <source src="assets/music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+    const musicBtn = document.getElementById('music-btn');
+    const music = document.getElementById('background-music');
+    const musicIcon = musicBtn.querySelector('i');
+
+    musicBtn.addEventListener('click', () => {
+      if (music.paused) {
+        music.play().catch(error => {
+          console.error('Lỗi phát nhạc:', error);
+        });
+        musicIcon.classList.replace('fa-play', 'fa-pause');
+      } else {
+        music.pause();
+        musicIcon.classList.replace('fa-pause', 'fa-play');
+      }
+    });
+
+    const downloadBtn = document.getElementById('download-qr-btn');
+
+    downloadBtn.addEventListener('click', () => {
+      const link = document.createElement('a');
+      link.href = 'assets/QR_Vanh.jpg';
+      link.download = 'QR_Donate_TranVietAnh.jpg';
+      link.click();
+    });
+  </script>
+</body>
+</html>
